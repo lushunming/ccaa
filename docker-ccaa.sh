@@ -9,6 +9,7 @@ export PATH
 
 #各种路径设置
 aria2_url='https://github.com/q3aql/aria2-static-builds/releases/download/v1.35.0/aria2-1.35.0-linux-gnu-64bit-build1.tar.bz2'
+aria2_url='https://github.com/P3TERX/Aria2-Pro-Core/releases/download/1.35.0_2020.12.29/aria2-1.35.0-static-linux-amd64.tar.gz'
 filebrowser_url='https://github.com/filebrowser/filebrowser/releases/download/v2.0.16/linux-amd64-filebrowser.tar.gz'
 master_url='https://github.com/helloxz/ccaa/archive/master.zip'
 ccaa_web_url='http://soft.xiaoz.org/linux/ccaa_web'
@@ -42,10 +43,11 @@ function install_aria2(){
 	cd ./ccaa_tmp
 	#yum -y update
 	#安装aria2静态编译版本，来源于https://github.com/q3aql/aria2-static-builds/
-	wget -c ${aria2_url}
-	tar jxvf aria2-1.35.0-linux-gnu-64bit-build1.tar.bz2
-	cd aria2-1.35.0-linux-gnu-64bit-build1
-	make install
+	#wget -c ${aria2_url}
+	#tar jxvf aria2-1.35.0-static-linux-amd64.tar.gz
+	#cd aria2-1.35.0-static-linux-amd64
+	#make install
+	curl -fsSL git.io/aria2c.sh | bash
 	cd
 }
 
@@ -133,7 +135,7 @@ function cleanup(){
 
 #卸载
 function uninstall(){
-	wget -O ccaa-uninstall.sh https://raw.githubusercontent.com/helloxz/ccaa/master/uninstall.sh
+	wget -O ccaa-uninstall.sh https://gitee.com/shunming/ccaa/raw/master//uninstall.sh
 	sh ccaa-uninstall.sh
 }
 
