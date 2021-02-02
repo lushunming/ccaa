@@ -169,7 +169,7 @@ function setting(){
 	do
 		read -p "Aria2 RPC 密钥:(字母或数字组合，不要含有特殊字符):" secret
 	done
-	
+
 	#如果下载路径为空，设置默认下载路径
 	if [ -z "${downpath}" ]
 	then
@@ -178,7 +178,7 @@ function setting(){
 
 	#获取ip
 	osip=$(curl -4s https://api.ip.sb/ip)
-	
+
 	#执行替换操作
 	mkdir -p ${downpath}
 	sed -i "s%dir=%dir=${downpath}%g" /etc/ccaa/aria2.conf
@@ -187,10 +187,10 @@ function setting(){
 	sed -i "s%ccaaDown%${downpath}%g" /etc/ccaa/config.json
 	#替换AriaNg服务器链接
 	sed -i "s/server_ip/${osip}/g" /etc/ccaa/AriaNg/index.html
-	
+
 	#更新tracker
 	bash /etc/ccaa/upbt.sh
-	
+
 	#安装AriaNg
 	wget ${ccaa_web_url}
 	tar -zxvf ccaa_web.tar.gz
@@ -216,7 +216,7 @@ function setting(){
 	echo 'File Browser 用户名:ccaa'
 	echo 'File Browser 密码:admin'
 	echo 'Aria2 RPC 密钥:' ${secret}
-	echo '帮助文档: https://dwz.ovh/ccaa （必看）' 
+	echo '帮助文档: https://dwz.ovh/ccaa （必看）'
 	echo '-------------------------------------------------------------'
 }
 #清理工作
@@ -229,7 +229,7 @@ function cleanup(){
 
 #卸载
 function uninstall(){
-	wget -O ccaa-uninstall.sh https://gitee.com/shunming/ccaa/raw/master//uninstall.sh
+	wget -O ccaa-uninstall.sh https://raw.githubusercontent.com/lushunming/ccaa/master/uninstall.sh
 	bash ccaa-uninstall.sh
 }
 
@@ -242,7 +242,7 @@ echo "3) 更新bt-tracker"
 echo "q) 退出！"
 read -p ":" istype
 case $istype in
-    1) 
+    1)
     	check
     	setout
     	chk_firewall
@@ -252,13 +252,13 @@ case $istype in
     	setting && \
     	cleanup
     ;;
-    2) 
+    2)
     	uninstall
     ;;
-    3) 
+    3)
     	bash /etc/ccaa/upbt.sh
     ;;
-    q) 
+    q)
     	exit
     ;;
     *) echo '参数错误！'

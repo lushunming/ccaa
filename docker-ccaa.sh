@@ -89,7 +89,7 @@ function setting(){
 
 	#获取ip
 	osip=$(curl -4s https://api.ip.sb/ip)
-	
+
 	#执行替换操作
 	downpath='/data/ccaaDown'
 	mkdir -p ${downpath}
@@ -103,7 +103,7 @@ function setting(){
 	mv /etc/ccaa/AriaNg/dindex.html /etc/ccaa/AriaNg/index.html
 	#更新tracker
 	sh /etc/ccaa/upbt.sh
-	
+
 	#安装AriaNg
 	wget ${ccaa_web_url}
 	#tar -zxvf ccaa_web.tar.gz
@@ -122,7 +122,7 @@ function setting(){
 	echo 'File Browser 用户名:ccaa'
 	echo 'File Browser 密码:admin'
 	echo 'Aria2 RPC 密钥:' $PASS
-	echo '帮助文档: https://dwz.ovh/ccaa （必看）' 
+	echo '帮助文档: https://dwz.ovh/ccaa （必看）'
 	echo '-------------------------------------------------------------'
 }
 #清理工作
@@ -135,7 +135,7 @@ function cleanup(){
 
 #卸载
 function uninstall(){
-	wget -O ccaa-uninstall.sh https://gitee.com/shunming/ccaa/raw/master//uninstall.sh
+	wget -O ccaa-uninstall.sh https://raw.githubusercontent.com/lushunming/ccaa/master/uninstall.sh
 	sh ccaa-uninstall.sh
 }
 
@@ -148,7 +148,7 @@ echo "3) 更新bt-tracker"
 echo "q) 退出！"
 #read -p ":" istype
 case $1 in
-    'install') 
+    'install')
     	check
     	setout
     	install_aria2 && \
@@ -157,13 +157,13 @@ case $1 in
     	setting && \
     	cleanup
     ;;
-    'uninstall') 
+    'uninstall')
     	uninstall
     ;;
-    'upbt') 
+    'upbt')
     	sh /etc/ccaa/upbt.sh
     ;;
-    'q') 
+    'q')
     	exit
     ;;
     *) echo '参数错误！'
