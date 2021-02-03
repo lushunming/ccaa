@@ -14,7 +14,7 @@ filebrowser_pid=$(pgrep 'filebrowser')
 #如果变量不存在
 if [ ! $1 ]
 	then
-	bash <(curl -Lsk https://raw.githubusercontent.com/lushunming/ccaa/master/ccaa.sh)
+	bash <(curl -Lsk https://gitee.com/shunming/ccaa/raw/master/ccaa.sh)
 	exit
 fi
 

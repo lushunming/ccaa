@@ -8,7 +8,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin:/sbin
 export PATH
 
 #各种路径设置
-aria2_url='https://github.com/q3aql/aria2-static-builds/releases/download/v1.35.0/aria2-1.35.0-linux-gnu-64bit-build1.tar.bz2'
+#aria2_url='https://github.com/q3aql/aria2-static-builds/releases/download/v1.35.0/aria2-1.35.0-linux-gnu-64bit-build1.tar.bz2'
 aria2_url='https://github.com/P3TERX/Aria2-Pro-Core/releases/download/1.35.0_2020.12.29/aria2-1.35.0-static-linux-amd64.tar.gz'
 filebrowser_url='https://github.com/filebrowser/filebrowser/releases/download/v2.0.16/linux-amd64-filebrowser.tar.gz'
 master_url='https://github.com/helloxz/ccaa/archive/master.zip'
@@ -135,7 +135,7 @@ function cleanup(){
 
 #卸载
 function uninstall(){
-	wget -O ccaa-uninstall.sh https://raw.githubusercontent.com/lushunming/ccaa/master/uninstall.sh
+	wget -O ccaa-uninstall.sh https://gitee.com/shunming/ccaa/raw/master/uninstall.sh
 	sh ccaa-uninstall.sh
 }
 
