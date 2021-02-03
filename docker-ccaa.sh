@@ -48,10 +48,14 @@ function install_aria2(){
 	#cd aria2-1.35.0-static-linux-amd64
 	#make install
 	#curl -fsSL git.io/aria2c.sh | sh
-    wget https://github.com/P3TERX/Aria2-Pro-Core/releases/download/1.35.0/aria2-1.35.0-static-linux-amd64.tar.gz
-    tar zxvf aria2-1.35.0-static-linux-amd64.tar.gz
-    cp  aria2c /usr/sbin
-    chmod +x /usr/sbin/aria2c
+#    wget https://github.com/P3TERX/Aria2-Pro-Core/releases/download/1.35.0/aria2-1.35.0-static-linux-amd64.tar.gz
+#    tar zxvf aria2-1.35.0-static-linux-amd64.tar.gz
+#    cp  aria2c /usr/sbin
+#    chmod +x /usr/sbin/aria2c
+    wget -c  https://github.com/myfreeer/aria2-build-msys2/archive/1.35.0.zip
+    unzip 1.35.0.zip
+    cd aria2-build-msys2-1.35.0
+    chmod +x build-aria2.sh && sh build-aria2.sh
 	cd
 }
 
