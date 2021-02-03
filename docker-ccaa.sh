@@ -51,6 +51,7 @@ function install_aria2(){
     wget https://github.com/P3TERX/Aria2-Pro-Core/releases/download/1.35.0/aria2-1.35.0-static-linux-amd64.tar.gz
     tar zxvf aria2-1.35.0-static-linux-amd64.tar.gz
     mv aria2c /usr/bin
+    ls /usr/bin
 	cd
 }
 
