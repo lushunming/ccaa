@@ -48,9 +48,9 @@ function install_aria2(){
 	#cd aria2-1.35.0-static-linux-amd64
 	#make install
 	#curl -fsSL git.io/aria2c.sh | sh
-	git clone https://github.com/P3TERX/Aria2-Pro-Core
-    cd Aria2-Pro-Core
-    bash aria2-gnu-linux-build.sh
+    wget https://github.com/P3TERX/Aria2-Pro-Core/releases/download/1.35.0/aria2-1.35.0-static-linux-amd64.tar.gz
+    tar zxvf aria2-1.35.0-static-linux-amd64.tar.gz
+    sudo mv aria2c /usr/local/bin
 	cd
 }
 
