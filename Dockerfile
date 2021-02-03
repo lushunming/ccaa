@@ -1,4 +1,4 @@
-FROM alpine:3.11.6
+FROM  ubuntu:focal-20210119
 
 WORKDIR /root
 RUN  wget https://raw.githubusercontent.com/lushunming/ccaa/master/docker-ccaa.sh && sh docker-ccaa.sh install
