@@ -39,6 +39,7 @@ case $1 in
 		kill -9 ${ccaa_web_pid}
 		kill -9 ${filebrowser_pid}
 		ccaa_start
+		exit;
 	;;
 	'status')
 		if [ "$aria2pid" == "" ]
