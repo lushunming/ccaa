@@ -35,10 +35,16 @@ case $1 in
 		kill -9 ${filebrowser_pid}
 	;;
 	'restart')
-		kill -9 ${aria2pid}
-		kill -9 ${ccaa_web_pid}
-		kill -9 ${filebrowser_pid}
-		ccaa_start
+	    if [ "$aria2pid" == "" ]
+	        then
+	             ccaa_start
+	        else
+                kill -9 ${aria2pid}
+                kill -9 ${ccaa_web_pid}
+                kill -9 ${filebrowser_pid}
+                ccaa_start
+        fi
+
 	;;
 	'status')
 		if [ "$aria2pid" == "" ]
