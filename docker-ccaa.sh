@@ -111,7 +111,7 @@ function setting(){
 	rm -rf /etc/ccaa/AriaNg/index.html
 	mv /etc/ccaa/AriaNg/dindex.html /etc/ccaa/AriaNg/index.html
 	#更新tracker
-	#sh /etc/ccaa/upbt.sh
+	sh /etc/ccaa/upbt.sh
 
 	#安装AriaNg
 	wget ${ccaa_web_url}
