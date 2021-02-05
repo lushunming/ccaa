@@ -38,11 +38,13 @@ case $1 in
 	    if [ "$aria2pid" == "" ]
 	        then
 	             ccaa_start
+	             exit
 	        else
                 kill -9 ${aria2pid}
                 kill -9 ${ccaa_web_pid}
                 kill -9 ${filebrowser_pid}
                 ccaa_start
+                exit
         fi
 
 	;;
