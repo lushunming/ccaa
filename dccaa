@@ -22,7 +22,7 @@ function ccaa_start(){
 	nohup /usr/sbin/ccaa_web > /var/log/ccaa_web.log 2>&1 &
 	nohup filebrowser -c /etc/ccaa/config.json > /var/log/fbrun.log 2>&1 &
 	echo "crond running....."
-	crond -l 2 -b
+	crond -l 2
 	#sleep 3600d
 }
 
