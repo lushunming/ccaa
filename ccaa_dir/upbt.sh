@@ -10,9 +10,11 @@ export PATH
 function up_tracker(){
 	#下载最新的bt-tracker
 	wget -O /tmp/trackers_best.txt https://trackerslist.com/all_aria2.txt
+	wget -O /tmp/trackers_all.txt https://cdn.jsdelivr.net/gh/ngosang/trackerslist/trackers_all.txt
 	tracker=$(cat /tmp/trackers_best.txt)
+	trackers_all=$(cat /tmp/trackers_all.txt | tr -s "\n" ",")
 	#替换处理bt-tracker
-	tracker="bt-tracker="${tracker}
+	tracker="bt-tracker="${trackers_all}${tracker}
 	#更新aria2配置
 	sed -i '/bt-tracker.*/'d /etc/ccaa/aria2.conf
 	echo ${tracker} >> /etc/ccaa/aria2.conf

@@ -1,4 +1,4 @@
-FROM    p3terx/s6-alpine
+FROM    xordiv/docker-alpine-cron
 WORKDIR /root
 RUN   wget https://raw.githubusercontent.com/lushunming/ccaa/master/docker-ccaa.sh && sh docker-ccaa.sh install
 VOLUME /data/ccaaDown
