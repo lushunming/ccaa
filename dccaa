@@ -21,6 +21,7 @@ function ccaa_start(){
 	nohup /usr/sbin/aria2c --conf-path=/etc/ccaa/aria2.conf > /var/log/aria2.log 2>&1 &
 	nohup /usr/sbin/ccaa_web > /var/log/ccaa_web.log 2>&1 &
 	nohup filebrowser -c /etc/ccaa/config.json > /var/log/fbrun.log 2>&1 &
+	echo "crond running....."
 	crond -l 2 -f
 	sleep 3600d
 }
@@ -37,9 +38,11 @@ case $1 in
 	'restart')
 	    if [ "$aria2pid" == "" ]
 	        then
+	             echo "start"
 	             ccaa_start
 	             exit
 	        else
+	            echo "restart"
                 kill -9 ${aria2pid}
                 kill -9 ${ccaa_web_pid}
                 kill -9 ${filebrowser_pid}
