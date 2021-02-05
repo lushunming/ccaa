@@ -83,7 +83,9 @@ function dealconf(){
 	touch /var/log/aria2.log
 	#upbt增加执行权限
 	chmod +x /etc/ccaa/upbt.sh
-	cp /etc/ccaa/upbt.sh /etc/periodic/daily/backup
+
+	cp /etc/ccaa/upbt.sh /etc/periodic/daily/upbt
+	echo " echo 'test' >> /app/test.log" >>/etc/periodic/15min/test
 	chmod +x ccaa-master/ccaa
 	cp ccaa-master/dccaa /usr/sbin
 	chmod +x /usr/sbin/dccaa
